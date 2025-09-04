@@ -1,59 +1,36 @@
-# ToDoApp
+# Ejercicios de Nivel 2 de Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
+# 🟨 Ejercicios Intermedios con `@Input()` y `@Output()`
 
-## Development server
+## ✅ Nivel 2 – Intermedio
+- [x] **Lista de tareas (Input)**  
+  Crea un `TodoListComponent` que reciba con `@Input()` un arreglo de strings con tareas.  
+  Muestra cada tarea en una lista `<ul>`.
 
-To start a local development server, run:
+- [ ] **Eliminar tarea (Output)**  
+  En el mismo `TodoListComponent`, agrega un botón ❌ al lado de cada tarea.  
+  Al hacer clic, emite un evento al padre con el **índice** de la tarea a eliminar.  
+  El padre debe actualizar la lista.
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [ ] **Contador controlado**  
+  Haz un `CounterComponent` con botones ➕ y ➖.  
+  Cada vez que cambie el valor, emite un `@Output()` con el nuevo número.  
+  El padre lo recibe y lo muestra en pantalla.
+  
+-   [ ] Crear un **componente de lista de productos** que recibe un
+    array de productos desde el padre mediante `@Input()`.
+-   [ ] Hacer que cada producto tenga un botón **"Añadir al carrito"**
+    que emite un evento con el producto al padre mediante `@Output()`.
+-   [ ] Crear un **componente hijo contador** que recibe un valor
+    inicial con `@Input()` y emite los cambios al padre con `@Output()`.
+-   [ ] Implementar un **componente de estrella de rating** ⭐ que
+    recibe una calificación inicial (`@Input()`) y emite el rating
+    seleccionado cuando el usuario hace clic.
+-   [ ] Crear un **componente modal** que se abre/cierra según una
+    propiedad `@Input()` y emite un evento `cerrar` al padre cuando el
+    usuario lo cierre.
+-   [ ] Hacer un **formulario hijo** que recibe un objeto usuario con
+    `@Input()`, y cuando se edite y se guarde emite el objeto
+    actualizado al padre con `@Output()`.
+-   [ ] Practicar pasar datos de **abuelo → padre → hijo** (encadenar
+    `@Input`) y **hijo → padre → abuelo** (encadenar `@Output`).
