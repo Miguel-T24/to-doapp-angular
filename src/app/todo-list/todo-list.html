@@ -1,23 +1,9 @@
-<input
-type="text"
-placeholder="Ingrese una Tarea"
-class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-[(ngModel)]="nuevaTarea"
->
-
-<button 
-class="bg-green-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-1 transition"
-(click)="agregarTarea(nuevaTarea)"
->
-Anadir Tarea
-</button>
-
 <ul>
     @for (tar of tareas; track $index){
-        <li class = "flex items-center justify-between bg-white shadow-md rounded-lg p-3 mb-2 max-w-sm  ">
+        <li class = "flex items-center justify-between bg-white shadow-md rounded-lg p-3 mb-2 max-w-sm">
             <span class="text-gray-800 font-medium">{{tar}}</span>
             <button class="text-red-500 hover:text-red-700 font-bold text-lg"
-            (click)="eliminarTarea($index)"
+            (click)="onEliminar($index)"
             >x</button>
         </li>
     }

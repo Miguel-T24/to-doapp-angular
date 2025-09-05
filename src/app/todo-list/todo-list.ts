@@ -1,24 +1,17 @@
-import { Component, Input } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { Component, Input , Output, EventEmitter} from '@angular/core';
 @Component({
   selector: 'app-todo-list',
-  imports: [FormsModule],
+  imports: [],
   templateUrl: './todo-list.html',
   styleUrl: './todo-list.css'
 })
 export class TodoList {
 
-  
-  tareas:string[] = [];
-  nuevaTarea = ""
-  agregarTarea(nuevaTarea:string){
-    this.tareas.push(nuevaTarea);
-    this.nuevaTarea = ""
-  }
+  @Input() tareas:string[] = [];
+  @Output() eliminar = new EventEmitter<number>();
 
-  eliminarTarea(index: number){
-    console.log(index);
-    this.tareas.splice(index,1);
+  onEliminar(i:number){
+    this.eliminar.emit(i);
   }
 
 }
