@@ -1,10 +1,40 @@
-<ul>
-    @for (tar of tareas; track $index){
-        <li class = "flex items-center justify-between bg-white shadow-md rounded-lg p-3 mb-2 max-w-sm">
-            <span class="text-gray-800 font-medium">{{tar}}</span>
-            <button class="text-red-500 hover:text-red-700 font-bold text-lg"
-            (click)="onEliminar($index)"
-            >x</button>
-        </li>
+<div class="w-full max-w-lg bg-white rounded-xl shadow-md p-4 space-y-4">
+  <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2">
+    {{ title }}
+  </h2>
+
+  <div class="flex gap-2 items-center">
+    <input
+      type="text"
+      [(ngModel)]="nueva"
+      (keyup.enter)="agregar()"
+      [placeholder]="placeholder"
+      class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm
+             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    />
+    <button
+      (click)="agregar()"
+      class="bg-green-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md
+             hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400
+             focus:ring-offset-1 transition"
+    >
+      {{ addLabel }}
+    </button>
+  </div>
+
+  <ul class="list-none p-0 space-y-2">
+    @for (t of tareas; track $index) {
+      <li class="flex items-center justify-between bg-gray-50 rounded-lg p-3">
+        <span class="text-gray-800 font-medium">{{ t }}</span>
+        <button
+          (click)="eliminar($index)"
+          class="text-red-600 hover:text-red-700 font-bold text-lg"
+          aria-label="Eliminar tarea"
+          title="Eliminar"
+        >
+          ✕
+        </button>
+      </li>
     }
-</ul>
+  </ul>
+</div>
